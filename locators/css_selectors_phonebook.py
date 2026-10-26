@@ -3,41 +3,94 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 driver = webdriver.Chrome()
 try:
-   # driver.get("https://telranedu.web.app/login")
-     driver.get("https://icarro-v1.netlify.app/search?page=0&size=10")
+    driver.get("https://telranedu.web.app/login")
+    # driver.get("https://icarro-v1.netlify.app/search?page=0&size=10")
+    #driver.get("https://www.w3schools.co,m/css/css_table.asp")
     #By TAG_NAME
-    # div = driver.find_element(By.TAG_NAME,"div")
-    # div2 = driver.find_element(By.CSS_SELECTOR,"div")
-    # #div3 = driver.find_element(By.XPATH,"div")
-    # h1 = driver.find_element(By.TAG_NAME,"h1")
-    # h1_2 = driver.find_element(By.CSS_SELECTOR,"h1")
+    div = driver.find_element(By.TAG_NAME,"div")
+    #print(len(div))
+    div2 = driver.find_element(By.CSS_SELECTOR,"div")
+    div3 = driver.find_element(By.XPATH,"//div")
+    h1 = driver.find_element(By.TAG_NAME,"h1")
+    h1_2 = driver.find_element(By.CSS_SELECTOR,"h1")
+    h1_3 = driver.find_element(By.XPATH,"//h1")
     #
     #
-    # input = driver.find_element(By.TAG_NAME,"input")
-    # input_1 = driver.find_element(By.CSS_SELECTOR,"input")
-    #
-    # a_list = driver.find_elements(By.TAG_NAME,"a")
-    # a_list_1 = driver.find_elements(By.CSS_SELECTOR,"a")
-    # print(len(a_list))
+    input = driver.find_element(By.TAG_NAME,"input")
+    input_1 = driver.find_element(By.CSS_SELECTOR,"input")
+    input1_1 = driver.find_element(By.XPATH,"//input")
+
+    a_list = driver.find_elements(By.TAG_NAME,"a")
+    a_list_1 = driver.find_elements(By.CSS_SELECTOR,"a")
+    a_list_2 = driver.find_elements(By.XPATH,"//a")
+    print(len(a_list))
     # #by class
-    # container = driver.find_element(By.CLASS_NAME,"container")
-    # container_1 = driver.find_element(By.CSS_SELECTOR , ".container")
-    # nav_bar = driver.find_elements(By.CLASS_NAME,"active")
-    # nav_bar_1 = driver.find_elements(By.CSS_SELECTOR,".active")
+    container = driver.find_element(By.CLASS_NAME,"container")
+    container_1 = driver.find_element(By.CSS_SELECTOR , ".container")
+    container_2 =driver.find_elements(By.XPATH,"//*[@class='container")
+    nav_bar = driver.find_elements(By.CLASS_NAME,"active")
+    nav_bar_1 = driver.find_elements(By.CSS_SELECTOR,".active")
+    nav_bar_2 = driver.find_element(By.XPATH,"//*[@class='active")
     # print(len(nav_bar))
     # print(len(nav_bar_1))
-    # login_1 = driver.find_element(By.CLASS_NAME,"login_login__3EHKB")
-    # login_1_1 = driver.find_element(By.CSS_SELECTOR,".login_login__3EHKB")
+    login_1 = driver.find_element(By.CLASS_NAME,"login_login__3EHKB")
+    login_1_1 = driver.find_element(By.CSS_SELECTOR,".login_login__3EHKB")
+    login_1_1_1 = driver.find_element(By.XPATH,"//*[@class = login_login__3EHKB ")
     #
     # #by ID
-    # root = driver.find_element(By.ID,"root")
-    # root_1 = driver.find_element(By.CSS_SELECTOR,"#root")
-    # root_2 = driver.find_elements(By.ID,"root")
+    root = driver.find_element(By.ID,"root")
+    root_1 = driver.find_element(By.CSS_SELECTOR,"#root")
+    root_2 = driver.find_elements(By.ID,"root")
+    root_3 = driver.find_element(By.XPATH,"//*[@id ='root")
     # print(len(root_2))
     #
     # #by attribute
-    # name = driver.find_element(By.CSS_SELECTOR,'input[name="email"]')
-    # email = driver.find_elements(By.CSS_SELECTOR,"input[=\email\"]")
+    name = driver.find_element(By.CSS_SELECTOR,'input[name="email"]')
+    email = driver.find_elements(By.CSS_SELECTOR,"input[=\email\"]")
+    email_xpath = driver.find_element(By.XPATH,"//input[@name = 'email]")
+
+    # by text  xPath
+    login_button = driver.find_element(By.XPATH,"//button[text() = 'Login'")
+    login_1_button = driver.find_element(By.XPATH,"//*[contains(text(),'Login")
+
+    #by attribute
+    input2 = driver.find_element(By.XPATH,"//input[@placeholder = 'Email']")
+    #css
+    input3 = driver.find_element(By.CSS_SELECTOR,"[placeholder^='Em]")
+    input3_1 = driver.find_element(By.XPATH,"//*[stars - with(@placeholder,'Em']")
+    #end css
+    input4 = driver.find_element(By.CSS_SELECTOR,"[placeholder$='il']")
+    #end xPath
+    input5 = driver.find_element(By.XPATH,"//*[contains(@placeholder,'il')]")
+    #middle CSS
+    input6 = driver.find_element(By.CSS_SELECTOR,"[placeholder *= 'ai']")
+    #middle CSS
+    input7 = driver.find_element(By.XPATH,"//*[contains(@placeholder,'ai')]")
+
+
+    subtitle = driver.find_element(By.CSS_SELECTOR,"Type your data and hit Yalla!")
+    start_sub = driver.find_element(By.CSS_SELECTOR,"")
+
+
+
+
+    #linkText & partiaLinkText
+    # home = driver.find_element(By.LINK_TEXT,"HOME")
+    # home1 = driver.find_element(By.PARTIAL_LINK_TEXT,"  ....")#часть слова в предложении)
+
+
+
+# #css in table
+# #row
+#     mexico = driver.find_element(By.CSS_SELECTOR,"#customers tr:nth-child(3)")
+# #column
+#     mexico1 = driver.find_element(By.CSS_SELECTOR,"#customers tr:nth-child(4)>td:nth-child(3)")
+#     assert mexico1.text == "Mexico"
+#
+# #first row
+#     item = driver.find_element(By.CSS_SELECTOR,"#customers tr:first-child")
+# #last row
+#     italy = driver.find_element(By.CSS_SELECTOR,"#customers tr:last-child")
 
 
 
